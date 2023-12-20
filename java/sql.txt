@@ -1,0 +1,23 @@
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL
+);
+INSERT INTO users (name, email, password) VALUES
+    ('John Doe', 'john@example.com', 'password123'),
+    ('Alice Smith', 'alice@example.com', 'securepass456'),
+    ('Bob Johnson', 'bob@example.com', 'mysecretpass789');
+CREATE TABLE IF NOT EXISTS orders (
+    id SERIAL PRIMARY KEY,
+    address VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL
+);
+
+-- Вставка декількох замовлень
+INSERT INTO orders (address, username, phone_number) VALUES
+    ('123 Main St, City', 'John Doe', '+1234567890'),
+    ('456 Elm St, Town', 'Jane Smith', '+1987654321'),
+    ('789 Oak St, Village', 'Alex Johnson', '+1122334455');
+
